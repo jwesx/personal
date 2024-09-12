@@ -89,7 +89,7 @@ def main():
 
         width = cv2.getTrackbarPos('widsld', 'Slider')
 
-        if width == 0:
+        if width <= 16:
             width = 200
 
         #seta um fram cinza,
@@ -106,10 +106,9 @@ def main():
         print(ascii_art)
         i += 1
         
-        '''if (i >= 50):
+        if (i >= 50):
             os.system('cls')
             i = 0
-        '''
 
         #if cv2.waitKey(1) == 103:
         #    os.system('cls')
