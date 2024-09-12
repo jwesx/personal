@@ -3,6 +3,7 @@ import math
 import cv2
 import numpy as np
 import os
+import time
 
 muito = [
     '!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/', ' ',
@@ -45,7 +46,7 @@ def main():
     #define a camera acessada (0 é padrão do dispositivo)
     cam = cv2.VideoCapture(0)
     slider = cv2.namedWindow('Slider')
-    cv2.createTrackbar('widsld', 'Slider', 100, 1000, nothing)
+    cv2.createTrackbar('widsld', 'Slider', 200, 1000, nothing)
 
     #loop deixa aberto
     while True:
@@ -71,6 +72,9 @@ def main():
 
         #e, no cmd, o ascii
         print(ascii_art)
+        
+        if cv2.waitKey(1) == 103:
+            os.system('cls')
 
         if cv2.waitKey(1) == 27:  # esc
             break
